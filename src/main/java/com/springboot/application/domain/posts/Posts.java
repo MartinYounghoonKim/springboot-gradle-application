@@ -10,10 +10,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @NoArgsConstructor
@@ -45,7 +42,7 @@ public class Posts extends BaseTimeEntity {
      * Springboot 2.0 에선 옵션 추가를 해야한다고 함(@ref https://jojoldu.tistory.com/295)
      */
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**
