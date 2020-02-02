@@ -34,3 +34,8 @@ rm -R /Users/[USER_NAME]/.gradle
 - https://www.daleseo.com/java8-optional-effective/
 - https://jeong-pro.tistory.com/m/165
 
+
+### TODO
+- [ ] [트랜젝션이란?](http://springmvc.egloos.com/495798)
+- [ ] [박재성님의 게시판 구현](https://www.youtube.com/watch?v=JUKehW-c484&list=PLqaSEyuwXkSppQAjwjXZgKkjWbFoUdNXC)
+- [ ] [CRUD 구성해보기](http://millky.com/@origoni/post/1100?language=ko_kr)
