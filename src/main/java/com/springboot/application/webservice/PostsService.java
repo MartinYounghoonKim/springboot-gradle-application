@@ -4,6 +4,7 @@ import com.springboot.application.domain.posts.PostsRepository;
 import com.springboot.application.dto.PostsMainResponseDto;
 import com.springboot.application.dto.PostsSaveRequestDto;
 import lombok.AllArgsConstructor;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,5 +25,17 @@ public class PostsService {
 		return postsRepository.findAllDesc()
 				.map(PostsMainResponseDto::new)
 				.collect(Collectors.toList());
+	}
+
+	@Transactional
+	public Long delete(Long id) throws Exception {
+		try {
+			postsRepository.deleteById(id);
+			return id;
+		} catch (EmptyResultDataAccessException e) {
+			throw new Exception("dddddd");
+		} catch (IllegalArgumentException e) {
+			return 111111111111L;
+		}
 	}
 }
