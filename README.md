@@ -30,6 +30,7 @@ rm -R /Users/[USER_NAME]/.gradle
 ```
 
 ### Reference
+- https://jojoldu.tistory.com/251?category=635883
 - https://www.daleseo.com/java8-optional-effective/
 - https://jeong-pro.tistory.com/m/165
 
