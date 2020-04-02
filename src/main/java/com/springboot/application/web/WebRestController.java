@@ -1,13 +1,12 @@
 package com.springboot.application.web;
 
-import com.springboot.application.domain.posts.PostsRepository;
+import com.springboot.application.dto.PostsMainResponseDto;
 import com.springboot.application.dto.PostsSaveRequestDto;
 import com.springboot.application.webservice.PostsService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -18,8 +17,22 @@ public class WebRestController {
         return "Hello, this is Martin's tutorial.";
     }
 
+    @GetMapping("/")
+    public List<PostsMainResponseDto> main () {
+        List<PostsMainResponseDto> list =  postsService.findAllDesc();
+        return list;
+    }
     @PostMapping("/post")
     public Long savePosts(@RequestBody PostsSaveRequestDto dto) {
         return postsService.save(dto);
+    }
+
+    @DeleteMapping("/post/{id}")
+    public Long deletePost(@PathVariable Long id) {
+        try {
+            return postsService.delete(id);
+        } catch (Exception e) {
+            return 1111L;
+        }
     }
 }

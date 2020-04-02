@@ -1,35 +1,10 @@
-### LocalDate 사용
-Java의 기본 날짜 타입인 Date의 문제점을 고친 타입으로 Java8 부터는 LocalDate와 LocalDateTime 을 주로 사용한다고 함
+## SpringBoot board application
 
-- 기존 Date의 단점 https://d2.naver.com/helloworld/645609
-### URL
-- [h2-console](http://localhost:8080/h2-console/login.do?jsessionid=5136b3d26e67e51526441f8ced8c3ece) 
+---
 
+해당 레파지토리는 [블로그](https://jojoldu.tistory.com/251?category=635883)를 참고하여 개인적으로 공부하기 위한 프로젝트로 작성되었습니다.
 
-### h2 database connection 안될때
-JDBC Url 부분에 `jdbc:h2:~/test`를 `jdbc:h2:mem:testdb`로 변경해주어야 함
-
-### Trouble Shooting
-#### Gradle Local cache로 인한 빌드 실패
-
-```bash
-rm -R /Users/[USER_NAME]/.gradle
-```
-
-#### Gradle Version 변경
-
-```bash
-./gradlew wrapper --gradle-version=5.6.4
-```
-
-#### Gradle build 실패
-`No cached version of available for offline mode` 와 같은 에러가 뜰 때
-
-```bash
-./gradlew build --stacktrace
-```
-
-### Reference
-- https://www.daleseo.com/java8-optional-effective/
-- https://jeong-pro.tistory.com/m/165
-
+### TODO
+- [ ] [트랜젝션이란?](http://springmvc.egloos.com/495798)
+- [ ] [박재성님의 게시판 구현](https://www.youtube.com/watch?v=JUKehW-c484&list=PLqaSEyuwXkSppQAjwjXZgKkjWbFoUdNXC)
+- [ ] [CRUD 구성해보기](http://millky.com/@origoni/post/1100?language=ko_kr)
