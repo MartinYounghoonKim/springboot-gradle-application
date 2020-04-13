@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPOSITORY=/home/ec2-user/app/git
+REPOSITORY=/home/ubuntu/app/git
 
 cd ${REPOSITORY}/springboot-gradle-application/
 
