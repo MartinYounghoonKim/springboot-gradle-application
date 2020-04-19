@@ -1,4 +1,4 @@
-## SpringBoot board application
+## SpringBoot board application [![Build Status](https://travis-ci.org/MartinYounghoonKim/springboot-gradle-application.svg?branch=master)](https://travis-ci.org/MartinYounghoonKim/springboot-gradle-application)
 
 ---
 
