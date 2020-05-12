@@ -16,7 +16,7 @@ fi
 
 echo "> 새 어플리케이션 배포"
 
-JAR_NAME=$(ls ${REPOSITORY}/ |grep 'springboot-gradle-application' | tail -n 1)
+JAR_NAME=$(ls ${REPOSITORY}/jar/ |grep 'springboot-gradle-application' | tail -n 1)
 
 echo "> JAR Name: $JAR_NAME"
 
