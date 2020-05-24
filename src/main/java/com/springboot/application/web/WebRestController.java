@@ -4,17 +4,23 @@ import com.springboot.application.dto.PostsMainResponseDto;
 import com.springboot.application.dto.PostsSaveRequestDto;
 import com.springboot.application.webservice.PostsService;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
 public class WebRestController {
     private PostsService postsService;
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello, this is Martin's tutorial. ㅎㅎㅎㅎㅎ";
+    private Environment environment;
+    @GetMapping("/profile")
+    public String getProfile() {
+        return Arrays.stream(environment.getActiveProfiles())
+            .findFirst()
+            .orElse("");
     }
 
     @GetMapping("/")
