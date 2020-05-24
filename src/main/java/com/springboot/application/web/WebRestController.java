@@ -12,9 +12,12 @@ import java.util.List;
 @AllArgsConstructor
 public class WebRestController {
     private PostsService postsService;
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello, this is Martin's tutorial. ㅎㅎㅎㅎㅎ";
+    private Environment environment;
+    @GetMapping("/profile")
+    public String getProfile() {
+        return Arrays.stream(environment.getActiveProfiles())
+            .findFirst()
+            .orElse("");
     }
 
     @GetMapping("/")
