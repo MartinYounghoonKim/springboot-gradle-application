@@ -1,7 +1,6 @@
 package com.springboot.application;
 
 import com.springboot.application.domain.BaseTimeEntity;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
