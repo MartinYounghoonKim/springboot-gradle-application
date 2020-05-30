@@ -3,6 +3,12 @@
 spring:
   profiles:
     active: local
+  output:
+    ansi:
+      enabled: always
+logging:
+  config: classpath:logback-spring.xml
+
 # --- 을 기준으로 상단은 공통 영역, 하단이 각 Profile의 설정 영역
 # 공통 영역의 값은 각 profile 환경에 동일한 설정이 있으면 무시, 없으면 공통 영역의 설정값이 적용
 # local 환경

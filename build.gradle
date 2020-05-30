@@ -1,6 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '2.2.2.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    // reference https://plugins.gradle.org/plugin/com.ewerk.gradle.plugins.querydsl
     id 'com.ewerk.gradle.plugins.querydsl' version '1.0.10' // querydsl 플러그인 추가
     id 'java'
 }
@@ -43,20 +44,20 @@ querydsl {
     querydslSourcesDir = querydslSrcDir
 }
 
-compileQuerydsl{
-    options.annotationProcessorPath = configurations.querydsl
-}
-
-configurations {
-    querydsl.extendsFrom compileClasspath
-}
-
 sourceSets {
     main {
         java {
             srcDirs = ['src/main/java', querydslSrcDir]
         }
     }
+}
+
+compileQuerydsl {
+    options.annotationProcessorPath = configurations.querydsl
+}
+
+configurations {
+    querydsl.extendsFrom compileClasspath
 }
 
 test {
