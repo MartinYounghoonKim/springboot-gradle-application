@@ -1,5 +1,7 @@
 package com.springboot.application.webservice;
 
+import com.springboot.application.domain.posts.PostRepositorySupport;
+import com.springboot.application.domain.posts.Posts;
 import com.springboot.application.domain.posts.PostsRepository;
 import com.springboot.application.dto.PostsMainResponseDto;
 import com.springboot.application.dto.PostsSaveRequestDto;
@@ -14,6 +16,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Service
 public class PostsService {
+	private PostRepositorySupport postRepositorySupport;
 	private PostsRepository postsRepository;
 //	javax 에도 Transactional이 있기 때문에 헷갈리지 않도록..
 	@Transactional
@@ -32,6 +35,11 @@ public class PostsService {
 		return postsRepository.findAllDesc()
 			.map(PostsMainResponseDto::new)
 			.collect(Collectors.toList());
+	}
+
+	@Transactional
+	public List<Posts> testing () {
+		return postRepositorySupport.findAll();
 	}
 
 	@Transactional

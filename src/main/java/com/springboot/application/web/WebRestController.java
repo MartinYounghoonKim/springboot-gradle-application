@@ -1,5 +1,6 @@
 package com.springboot.application.web;
 
+import com.springboot.application.domain.posts.Posts;
 import com.springboot.application.dto.PostsMainResponseDto;
 import com.springboot.application.dto.PostsSaveRequestDto;
 import com.springboot.application.webservice.PostsService;
@@ -21,6 +22,11 @@ public class WebRestController {
     @GetMapping("/profile")
     public String getProfile() {
         return active;
+    }
+
+    @GetMapping("/test")
+    public List<Posts> testing () {
+        return postsService.testing();
     }
 
     @GetMapping("/")
